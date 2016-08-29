@@ -1,0 +1,10 @@
+name: beltlineshinyapp
+account: johnkilleen
+server: shinyapps.io
+appId: 122789
+bundleId: 543674
+url: https://johnkilleen.shinyapps.io/beltlineshinyapp/
+when: 1472490935.49547
+asMultiple: FALSE
+asStatic: FALSE
+ignoredFiles: beltlineshinyapp.Rmd

@@ -1,0 +1,10 @@
+name: DurhamBeltline
+account: johnkilleen
+server: shinyapps.io
+appId: 122791
+bundleId: 543916
+url: https://johnkilleen.shinyapps.io/DurhamBeltline/
+when: 1472505874.48702
+asMultiple: FALSE
+asStatic: FALSE
+ignoredFiles: beltlineshinyapp.Rmd
