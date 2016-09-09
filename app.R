@@ -14,8 +14,8 @@ sanborn <- leaflet() %>%
            options = WMSTileOptions(draggable = TRUE, format = "image/png", opacity = 0.75), group = "1884") %>% 
   addTiles("http://www2.lib.unc.edu/dc/maptiles/sanborn/Durham/1888/{z}/{x}/{y}.png",
            options = WMSTileOptions(draggable = TRUE, format = "image/png", opacity = 0.75), group = "1888") %>% 
-  addTiles("http://www2.lib.unc.edu/dc/maptiles/sanborn/Durham/1893/{z}/{x}/{y}.png",
-           options = WMSTileOptions(draggable = TRUE, format = "image/png", opacity = 0.75), group = "1893") %>% 
+  #addTiles("http://www2.lib.unc.edu/dc/maptiles/sanborn/Durham/1893/{z}/{x}/{y}.png",
+           #options = WMSTileOptions(draggable = TRUE, format = "image/png", opacity = 0.75), group = "1893") %>% 
   addTiles("http://www2.lib.unc.edu/dc/maptiles/sanborn/Durham/1898/{z}/{x}/{y}.png",
            options = WMSTileOptions(draggable = TRUE, format = "image/png", opacity = 0.75), group = "1898") %>% 
   addTiles("http://www2.lib.unc.edu/dc/maptiles/sanborn/Durham/1902/{z}/{x}/{y}.png",
@@ -25,7 +25,7 @@ sanborn <- leaflet() %>%
   addTiles("http://www2.lib.unc.edu/dc/maptiles/sanborn/Durham/1913/{z}/{x}/{y}.png",
            options = WMSTileOptions(draggable = TRUE, format = "image/png", opacity = 0.75), group = "1913") %>% 
 addLayersControl(baseGroups = c("DarkMatter", "Positron"), 
-                 overlayGroups=c("1884","1888","1893","1898","1902","1907","1913"), 
+                 overlayGroups=c("1884","1888","1898","1902","1907","1913"), 
                  position="topright", 
                  options=layersControlOptions(collapsed = TRUE)) 
 
@@ -65,7 +65,8 @@ ui <- shinyUI(fluidPage(
 server <- shinyServer(function(input, output) {
    
   map <- sanborn %>% hideGroup("1888") %>% 
-    hideGroup("1893")%>% hideGroup("1898") %>% 
+    #hideGroup("1893")%>% 
+    hideGroup("1898") %>% 
     hideGroup("1902")%>% hideGroup("1907") %>%
     hideGroup("1913")
   output$sanborn <- renderLeaflet(map)
